@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xyloft Technologies - B2B Electronics Design & Manufacturing</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .text-gradient {
+            background: linear-gradient(90deg, #1e40af, #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .bg-gradient-hover:hover {
+            background: linear-gradient(90deg, #3b82f6, #1e40af);
+        }
+        .bg-pattern {
+            background-image: url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%231f2937" fill-opacity="0.1"%3E%3Cpath d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6zm30 0V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 4v-4H4v4H0v2h4v4h2V6h4V4H6zm30 30v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM36 4v-4h-2v4h-4v2h4v4h2V6h4V4h-4zM6 4V0H4v4H0v2h4v4h2V6h4V4H6zM36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-100 antialiased">
+
+    <!-- Header -->
+    <header class="bg-gray-800 bg-opacity-80 backdrop-blur-sm sticky top-0 z-50 shadow-lg">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="flex items-center space-x-2">
+                <!-- Logo can be replaced with an image if you have one. For now, using text. -->
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-8 w-8 text-blue-500">
+                  <path d="M11.25 4.5l-3.375 3.375M11.25 4.5h7.5M11.25 4.5l3.375 3.375m-3.75 3.75l-3.375 3.375M11.25 12h7.5m-3.75 3.75l-3.375 3.375M11.25 19.5l3.375-3.375m-3.75 3.75h7.5m-7.5 0l3.375-3.375" />
+                </svg>
+                <div class="text-2xl font-bold text-gray-50"><span class="text-blue-500">X</span>yloft<span class="text-blue-500">.</span></div>
+            </a>
+            <nav class="hidden md:flex space-x-6">
+                <a href="#services" class="text-gray-300 hover:text-white transition-colors duration-300">Services</a>
+                <a href="#contact" class="text-gray-300 hover:text-white transition-colors duration-300">Contact</a>
+            </nav>
+            <button id="menu-button" class="md:hidden text-gray-300 hover:text-white focus:outline-none">
+                <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden fixed inset-0 bg-gray-900 bg-opacity-90 z-40 flex flex-col items-center justify-center space-y-8">
+        <a href="#services" class="text-white text-2xl" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Services</a>
+        <a href="#contact" class="text-white text-2xl" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Contact</a>
+        <button id="close-menu-button" class="absolute top-6 right-6 text-gray-300 hover:text-white">
+            <svg class="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+        </button>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="relative h-screen flex items-center justify-center text-center px-4 bg-gray-900 overflow-hidden">
+        <div class="absolute inset-0 bg-pattern opacity-10"></div>
+        <div class="z-10 max-w-4xl mx-auto">
+            <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight mb-4">
+                Your Trusted <span class="text-gradient">B2B Electronics Design</span> & Manufacturing Partner
+            </h1>
+            <p class="text-lg sm:text-xl text-gray-400 mb-8 max-w-2xl mx-auto">
+                From concept to completion, we streamline your electronics development with expert design, rapid prototyping, and efficient manufacturing.
+            </p>
+            <a href="#services" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition-transform transform hover:scale-105 duration-300">
+                Explore Our Services
+            </a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 px-4 bg-gray-800">
+        <div class="container mx-auto max-w-6xl">
+            <h2 class="text-3xl sm:text-4xl font-bold text-center mb-12">Our Core <span class="text-blue-500">Services</span></h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Service 1: PCB Design -->
+                <div class="bg-gray-700 p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+                    <div class="flex items-center justify-center mb-4 text-blue-400">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-12 h-12">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 12c0-1.232-.239-2.434-.683-3.578A3.013 3.013 0 0 0 16.5 6.75h-1.875a1.875 1.875 0 0 0-1.406-.677H12.601a3.013 3.013 0 0 0-.683-3.578C11.378 2.566 10.176 2.25 9 2.25c-1.232 0-2.434.239-3.578.683A3.013 3.013 0 0 0 2.25 6.75v10.5c0 1.232.239 2.434.683 3.578A3.013 3.013 0 0 0 6.75 21.75h10.5c1.232 0 2.434-.239 3.578-.683a3.013 3.013 0 0 0 1.578-2.695v-1.875a1.875 1.875 0 0 0 .677-1.406V12.601a3.013 3.013 0 0 0 3.578-.683c.444-.444.683-1.045.683-1.686z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2 text-center">PCB Design & Schematics</h3>
+                    <p class="text-gray-400 text-center">Expert design and layout for efficient, high-performance circuit boards.</p>
+                </div>
+
+                <!-- Service 2: 3D Printing -->
+                <div class="bg-gray-700 p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+                    <div class="flex items-center justify-center mb-4 text-blue-400">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-12 h-12">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M17.5 7.5L12 1.5 6.5 7.5M12 1.5V22.5M12 22.5l5.5-6H6.5l5.5 6z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2 text-center">3D Printing</h3>
+                    <p class="text-gray-400 text-center">Rapid prototyping and custom enclosure creation for your electronics.</p>
+                </div>
+
+                <!-- Service 3: Logistics & Part Sourcing -->
+                <div class="bg-gray-700 p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+                    <div class="flex items-center justify-center mb-4 text-blue-400">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-12 h-12">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M12 1.5v21m0 0l-4.5-4.5M12 22.5l4.5-4.5" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2 text-center">Logistics & Part Sourcing</h3>
+                    <p class="text-gray-400 text-center">We manage the entire supply chain, ensuring timely delivery and quality parts.</p>
+                </div>
+
+                <!-- Service 4: Manufacturing Partner -->
+                <div class="bg-gray-700 p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+                    <div class="flex items-center justify-center mb-4 text-blue-400">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-12 h-12">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M12 14.25a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0ZM15 9.75a2.25 2.25 0 1 0 0 4.5 2.25 2.25 0 0 0 0-4.5Z" />
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M12 14.25a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0ZM15 9.75a2.25 2.25 0 1 0 0 4.5 2.25 2.25 0 0 0 0-4.5Z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2 text-center">B2B Manufacturing Partner</h3>
+                    <p class="text-gray-400 text-center">Your reliable partner for large-scale, high-quality electronics manufacturing.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Estimator Section (New) -->
+    <section id="project-estimator" class="py-20 px-4 bg-gray-900">
+        <div class="container mx-auto max-w-2xl">
+            <h2 class="text-3xl sm:text-4xl font-bold text-center mb-6">Get a Quick <span class="text-blue-500">Project Estimate</span></h2>
+            <p class="text-center text-gray-400 mb-8">
+                Describe your electronics project below and our AI will provide a preliminary scope and list of potential services needed.
+            </p>
+            <div class="space-y-6">
+                <div>
+                    <label for="project-description" class="block text-sm font-medium text-gray-300">Project Description</label>
+                    <textarea id="project-description" rows="8" class="mt-1 block w-full rounded-md bg-gray-800 border-gray-700 focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50 p-3" placeholder="e.g., I need a custom IoT sensor for monitoring temperature and humidity in a warehouse. It should be battery-powered and communicate via LoRaWAN."></textarea>
+                </div>
+                <div class="text-center">
+                    <button id="estimate-button" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition-transform transform hover:scale-105 duration-300">
+                        Get Project Estimate ✨
+                    </button>
+                </div>
+                <!-- Loading state -->
+                <div id="loading-spinner" class="hidden text-center py-4">
+                    <div class="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-current border-r-transparent text-blue-500" role="status">
+                        <span class="!absolute !-m-px !h-px !-w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]">Loading...</span>
+                    </div>
+                </div>
+                <!-- Output area -->
+                <div id="project-output" class="bg-gray-800 rounded-xl p-6 hidden">
+                    <h3 class="text-xl font-semibold text-gray-200 mb-4">Initial Project Analysis</h3>
+                    <div id="output-content" class="text-gray-300 prose prose-invert max-w-none">
+                        <!-- AI-generated content will be inserted here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 px-4 bg-gray-900">
+        <div class="container mx-auto max-w-2xl">
+            <h2 class="text-3xl sm:text-4xl font-bold text-center mb-6">Let's Build Something <span class="text-blue-500">Together</span></h2>
+            <p class="text-center text-gray-400 mb-2">
+                Ready to start your next project? Get in touch with us to discuss your needs.
+            </p>
+            <p class="text-center text-gray-400 mb-10">
+                You can also reach us directly at:
+                <a href="mailto:xyloft.technologies@gmail.com" class="text-blue-400 hover:text-blue-500 transition-colors duration-300">xyloft.technologies@gmail.com</a>
+                <span class="mx-2 text-gray-500">|</span>
+                <a href="tel:+916282353042" class="text-blue-400 hover:text-blue-500 transition-colors duration-300">+91 6282 353 042</a>
+            </p>
+            <form action="mailto:xyloft.technologies@gmail.com?subject=Inquiry%20from%20Website" method="POST" class="space-y-6">
+                <div>
+                    <label for="name" class="block text-sm font-medium text-gray-300">Name</label>
+                    <input type="text" id="name" name="name" class="mt-1 block w-full rounded-md bg-gray-800 border-gray-700 focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50 p-3" required>
+                </div>
+                <div>
+                    <label for="email" class="block text-sm font-medium text-gray-300">Email</label>
+                    <input type="email" id="email" name="email" class="mt-1 block w-full rounded-md bg-gray-800 border-gray-700 focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50 p-3" required>
+                </div>
+                <div>
+                    <label for="message" class="block text-sm font-medium text-gray-300">Message</label>
+                    <textarea id="message" name="message" rows="4" class="mt-1 block w-full rounded-md bg-gray-800 border-gray-700 focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50 p-3" required></textarea>
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition-transform transform hover:scale-105 duration-300">
+                        Send Message
+                    </button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 py-8 px-4 text-center">
+        <div class="container mx-auto">
+            <p class="text-gray-400">&copy; 2023 Xyloft Technologies. All rights reserved.</p>
+            <a href="mailto:xyloft.technologies@gmail.com" class="text-blue-400 hover:text-blue-500 transition-colors duration-300 mt-2 block">xyloft.technologies@gmail.com</a>
+            <a href="tel:+916282353042" class="text-blue-400 hover:text-blue-500 transition-colors duration-300 mt-2 block">+91 6282 353 042</a>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Mobile menu functionality
+        const menuButton = document.getElementById('menu-button');
+        const closeMenuButton = document.getElementById('close-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuButton.addEventListener('click', () => {
+            mobileMenu.classList.remove('hidden');
+        });
+
+        closeMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+        });
+
+        // Close mobile menu when clicking outside of it
+        mobileMenu.addEventListener('click', (e) => {
+            if (e.target === mobileMenu) {
+                mobileMenu.classList.add('hidden');
+            }
+        });
+
+        // Gemini API Integration for Project Estimator
+        document.getElementById('estimate-button').addEventListener('click', async () => {
+            const projectDescription = document.getElementById('project-description').value;
+            const outputElement = document.getElementById('project-output');
+            const outputContent = document.getElementById('output-content');
+            const loadingSpinner = document.getElementById('loading-spinner');
+
+            if (!projectDescription) {
+                outputContent.innerHTML = '<p class="text-red-400">Please enter a project description.</p>';
+                outputElement.classList.remove('hidden');
+                return;
+            }
+
+            // Show loading spinner and hide previous output
+            loadingSpinner.classList.remove('hidden');
+            outputElement.classList.add('hidden');
+            outputContent.innerHTML = '';
+
+            try {
+                let chatHistory = [];
+                const prompt = `Given the following electronics project description, please provide a concise and professional summary of the project scope and a bulleted list of estimated required services from Xyloft Technologies. The list should only include relevant services from the following: 'PCB Design & Schematics', '3D Printing', 'Logistics & Part Sourcing', 'B2B Manufacturing Partner'. Do not include any other services. Format the output with clear headings for 'Project Scope' and 'Required Services'.\n\nProject Description: ${projectDescription}`;
+                chatHistory.push({ role: "user", parts: [{ text: prompt }] });
+                
+                const payload = { contents: chatHistory };
+                const apiKey = "";
+                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
+
+                let response;
+                let result;
+                let retries = 0;
+                const maxRetries = 5;
+                const baseDelay = 1000; // 1 second
+
+                while (retries < maxRetries) {
+                    try {
+                        response = await fetch(apiUrl, {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify(payload)
+                        });
+
+                        if (response.status === 429) { // Too Many Requests
+                            const delay = baseDelay * Math.pow(2, retries);
+                            retries++;
+                            await new Promise(res => setTimeout(res, delay));
+                            continue;
+                        }
+
+                        if (!response.ok) {
+                            throw new Error(`API call failed with status: ${response.status}`);
+                        }
+
+                        result = await response.json();
+                        break; // Success, exit the loop
+                    } catch (error) {
+                        if (retries < maxRetries - 1) {
+                            const delay = baseDelay * Math.pow(2, retries);
+                            retries++;
+                            await new Promise(res => setTimeout(res, delay));
+                        } else {
+                            throw error;
+                        }
+                    }
+                }
+
+                if (result.candidates && result.candidates.length > 0 &&
+                    result.candidates[0].content && result.candidates[0].content.parts &&
+                    result.candidates[0].content.parts.length > 0) {
+                    const generatedText = result.candidates[0].content.parts[0].text;
+                    const markdownText = generatedText.replace(/\*/g, '').replace(/#+/g, '##');
+                    outputContent.innerHTML = markdownText;
+                } else {
+                    outputContent.innerHTML = '<p class="text-red-400">Sorry, I couldn\'t generate an estimate. Please try again or contact us directly.</p>';
+                }
+            } catch (error) {
+                console.error("Error calling Gemini API:", error);
+                outputContent.innerHTML = '<p class="text-red-400">An unexpected error occurred. Please try again later.</p>';
+            } finally {
+                loadingSpinner.classList.add('hidden');
+                outputElement.classList.remove('hidden');
+            }
+        });
+    </script>
+</body>
+</html>
